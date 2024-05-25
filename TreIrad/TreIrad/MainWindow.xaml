@@ -1,0 +1,46 @@
+﻿<Window x:Class="TreIrad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TreIrad"
+        mc:Ignorable="d"
+        Title="Tre-I-Rad" Height="450" Width="800"
+        FontFamily="Segoe UI Light"
+        Background="{StaticResource Backgroundcolor}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TurnPanel"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <TextBlock FontSize="54"
+                       Text="Spelare:"
+                       Margin="0,0,0,15"/>
+            <Image x:Name="PlayerImage"
+                   Source="Assets/X15.png"
+                   Height="75"/>
+        </StackPanel>
+
+        <Canvas x:Name="SpelTavla"
+                Grid.Row="1"
+                Width="300"
+                Height="300">
+            <UniformGrid x:Name="SpelGrid"
+                         Width="300"
+                         Height="300"
+                         Rows="3"
+                         Columns="3"
+                         MouseDown="SpelGrid_MouseDown">
+                <UniformGrid.Background>
+                    <ImageBrush ImageSource="Assets/Grid.png"/>
+                </UniformGrid.Background>              
+            </UniformGrid>
+        </Canvas>
+
+    </Grid>
+</Window>
